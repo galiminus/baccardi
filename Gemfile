@@ -14,9 +14,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -30,6 +27,9 @@ gem 'active_model_serializers'
 gem 'inherited_resources'
 gem 'pundit'
 gem 'slim'
+gem 'figaro'
+gem 'httpclient'
+gem 'jwt'
 
 gem 'angular-rails-templates'
 
@@ -42,3 +42,4 @@ gem 'rails-assets-angular-material'
 gem 'rails-assets-angular-animate'
 gem 'rails-assets-angular-aria'
 gem 'rails-assets-underscore'
+

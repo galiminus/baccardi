@@ -8,8 +8,11 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
       resolve:
         projections: (Restangular) ->
           Restangular.all("projections.json").getList()
-      controller: ($scope, projections) ->
+      controller: ($scope, $auth, projections) ->
         $scope.projections = projections
+        $scope.authenticate = ->
+          $auth.authenticate('google').then (response) ->
+            console.log response
 
 .run ($rootScope) ->
   $rootScope.$on("$stateChangeError", console.log.bind(console));

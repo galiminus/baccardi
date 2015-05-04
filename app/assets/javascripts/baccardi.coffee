@@ -3,4 +3,6 @@ angular.module("app", [
   "ui.router"
   "pascalprecht.translate"
   "restangular"
+  "templates"
+  "satellizer"
 ])

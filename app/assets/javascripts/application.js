@@ -17,7 +17,8 @@
 //= require angular-animate
 //= require angular-aria
 //= require angular-ui-router
-//= require angular-rails-template
+//= require angular-rails-templates
+//= require satellizer
 //= require restangular
 //= require baccardi
 //= require_tree ./initializers
