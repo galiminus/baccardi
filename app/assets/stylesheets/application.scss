@@ -1,0 +1,11 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,latin-ext);
+@import "angular-material";
+@import "ng-material-floating-button";
+
+main {
+    height: 90%;
+
+    &.login {
+        text-align: center;
+    }
+}

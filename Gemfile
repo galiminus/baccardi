@@ -42,4 +42,4 @@ gem 'rails-assets-angular-material'
 gem 'rails-assets-angular-animate'
 gem 'rails-assets-angular-aria'
 gem 'rails-assets-underscore'
-
+gem 'rails-assets-nobitagit--ng-material-floating-button'
