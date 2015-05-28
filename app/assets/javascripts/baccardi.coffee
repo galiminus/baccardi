@@ -5,4 +5,6 @@ angular.module("app", [
   "restangular"
   "templates"
   "satellizer"
+  "ng-mfb"
+  "ng-currency"
 ])

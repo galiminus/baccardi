@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :projections
+
   def self.for_oauth oauth
     oauth.get_data
     data = oauth.data

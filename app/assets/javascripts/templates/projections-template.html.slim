@@ -1,7 +1,20 @@
-main layout="row"
-  md-content
-    p
-      | LOL
-  md-sidenav.md-sidenav-right md-whiteframe-z2 md-component-id="right" md-is-locked-open="true"
-    p
-      | KIKOU
+md-content layout="row" layout-align="center" layout-wrap="true" layout-fill="true"
+  .md-whiteframe-z1 flex="100" flex-gt-md="50" layout-padding="true" layout="column"
+    md-subheader
+      h1.total
+        | {{total / 30|number:0}} / JOUR
+    md-list
+      md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center" ui-sref="projections.edit({id:projection.id})"
+        p
+          | {{projection.label}}
+        h2.md-list-item-text
+          | {{projection.variation}}
+nav [
+  ui-sref="projections.new"
+  mfb-menu="true"
+  position="br"
+  effect="zoomin"
+  resting-icon="menu"
+  active-icon="close"
+  template-url="ng-mfb-menu-md.tpl.html"
+]

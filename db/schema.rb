@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150504200311) do
+ActiveRecord::Schema.define(version: 20150527222144) do
 
   create_table "projections", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "variation"
     t.boolean  "recurring"
+    t.integer  "user_id"
+    t.text     "label"
   end
+
+  add_index "projections", ["user_id"], name: "index_projections_on_user_id"
 
   create_table "users", force: true do |t|
     t.datetime "created_at"

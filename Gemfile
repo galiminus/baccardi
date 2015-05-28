@@ -23,6 +23,14 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development do
+  gem "fabrication"
+  gem "ffaker"
+  gem "better_errors"
+  gem "pry"
+  gem "ffaker"
+end
+
 gem 'active_model_serializers'
 gem 'inherited_resources'
 gem 'pundit'
@@ -43,3 +51,5 @@ gem 'rails-assets-angular-animate'
 gem 'rails-assets-angular-aria'
 gem 'rails-assets-underscore'
 gem 'rails-assets-nobitagit--ng-material-floating-button'
+gem 'rails-assets-angular-moment'
+gem 'rails-assets-ng-currency'

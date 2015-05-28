@@ -1,3 +1,3 @@
 class ProjectionSerializer < ActiveModel::Serializer
-  attributes :id, :variation, :recurring
+  attributes :id, :variation, :label, :recurring
 end

@@ -5,6 +5,6 @@ class UsersController < InheritedResources::Base
     @oauth = OAuth.const_get(action_name.capitalize).new params
     @user = User.for_oauth @oauth
 
-    render json: { token: Token.encode(@user.id) }
+    render json: { id: @user.id, token: Token.encode(@user.id) }
   end
 end
