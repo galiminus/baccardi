@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150527222144) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "projections", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150527222144) do
     t.text     "label"
   end
 
-  add_index "projections", ["user_id"], name: "index_projections_on_user_id"
+  add_index "projections", ["user_id"], name: "index_projections_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
