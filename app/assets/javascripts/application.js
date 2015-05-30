@@ -19,7 +19,6 @@
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require ng-currency
-//= require ng-material-floating-button
 //= require satellizer
 //= require restangular
 //= require baccardi

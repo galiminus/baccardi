@@ -1,20 +1,18 @@
 md-content layout="row" layout-align="center" layout-wrap="true" layout-fill="true"
   .md-whiteframe-z1 flex="100" flex-gt-md="50" layout-padding="true" layout="column"
     md-subheader
-      h1.total
+      h1.total ng-show="total"
         | {{total / 30|number:0}} / JOUR
+      h1 ng-hide="total"
+        | No projections
     md-list
-      md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center" ui-sref="projections.edit({id:projection.id})"
-        p
+      md-divider flex="100" ng-show="total"
+      md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center"
+        p ui-sref="projections.edit({id:projection.id})"
           | {{projection.label}}
         h2.md-list-item-text
           | {{projection.variation}}
-nav [
-  ui-sref="projections.new"
-  mfb-menu="true"
-  position="br"
-  effect="zoomin"
-  resting-icon="menu"
-  active-icon="close"
-  template-url="ng-mfb-menu-md.tpl.html"
-]
+        md-divider flex="100"
+md-button class="md-accent md-fab md-fab-bottom-right" ui-sref="projections.new"
+  | +
+

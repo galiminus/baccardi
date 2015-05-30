@@ -56,7 +56,6 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-animate'
   gem 'rails-assets-angular-aria'
   gem 'rails-assets-underscore'
-  gem 'rails-assets-nobitagit--ng-material-floating-button'
   gem 'rails-assets-angular-moment'
   gem 'rails-assets-ng-currency'
 end

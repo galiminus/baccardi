@@ -116,8 +116,6 @@ GEM
     rails-assets-moment (2.10.3)
     rails-assets-ng-currency (0.8.6)
       rails-assets-angular (~> 1.3.4)
-    rails-assets-nobitagit--ng-material-floating-button (0.6.0)
-      rails-assets-angular (~> 1.3.6)
     rails-assets-restangular (1.5.1)
       rails-assets-angular (~> 1.0)
       rails-assets-lodash (>= 1.3.0)
@@ -198,7 +196,6 @@ DEPENDENCIES
   rails-assets-angular-translate!
   rails-assets-angular-ui-router!
   rails-assets-ng-currency!
-  rails-assets-nobitagit--ng-material-floating-button!
   rails-assets-restangular!
   rails-assets-satellizer!
   rails-assets-underscore!

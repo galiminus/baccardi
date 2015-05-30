@@ -22,15 +22,21 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
       controller: ($scope, projections) ->
         $scope.projections = projections
         $scope.$watch "projections", (projections) ->
-          $scope.total = projections.map (projection) ->
-            projection.variation
-          .reduce (x, y) -> x + y
+          return unless projections
+
+          if projections.length == 0
+            $scope.total = null
+          else
+            $scope.total = projections.map (projection) ->
+              projection.variation
+            .reduce (x, y) -> x + y
         , true
 
     .state "projections.new",
       url: "/new"
       onEnter: ($mdDialog, $state, Restangular, user, projections) ->
         $mdDialog.show
+          clickOutsideToClose: true
           templateUrl: "projections-new-dialog-template.html"
           controller: ($scope) ->
             $scope.projection = {}
@@ -60,7 +66,6 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
                 $mdDialog.hide()
 
             $scope.create = ->
-              console.log $scope.projection
               $scope.projection.put().then ->
                 projection.label = $scope.projection.label
                 projection.variation = $scope.projection.variation
