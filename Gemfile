@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -24,7 +23,10 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem "ngannotate-rails"
+  gem 'rails_12factor'
+end
 
 group :development do
   gem "fabrication"
@@ -43,15 +45,18 @@ gem 'jwt'
 
 gem 'angular-rails-templates'
 
-gem 'rails-assets-satellizer'
-gem 'rails-assets-angular', "~> 1.3.15"
-gem 'rails-assets-angular-translate'
-gem 'rails-assets-angular-ui-router'
-gem 'rails-assets-restangular'
-gem 'rails-assets-angular-material'
-gem 'rails-assets-angular-animate'
-gem 'rails-assets-angular-aria'
-gem 'rails-assets-underscore'
-gem 'rails-assets-nobitagit--ng-material-floating-button'
-gem 'rails-assets-angular-moment'
-gem 'rails-assets-ng-currency'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-satellizer'
+  gem 'rails-assets-angular', "~> 1.3.15"
+  gem 'rails-assets-angular-translate'
+  gem 'rails-assets-angular-ui-router'
+  gem 'rails-assets-restangular'
+  gem 'rails-assets-angular-material'
+  gem 'rails-assets-angular-animate'
+  gem 'rails-assets-angular-aria'
+  gem 'rails-assets-underscore'
+  gem 'rails-assets-nobitagit--ng-material-floating-button'
+  gem 'rails-assets-angular-moment'
+  gem 'rails-assets-ng-currency'
+end
