@@ -11,6 +11,9 @@ md-dialog flex="100" flex-gt-md="50" aria-label="{{'ADD_PROJECTION'|translate}}"
             | {{'VARIATION_ADD'|translate}}
           input ng-required="true" name="variation" ng-model="projection.variation" type="number"
 
+        md-switch ng-model="projection.recurring" aria-label="recurring"
+          | {{'RECURRING'|translate}}
+
     .md-actions layout="row" layout-align="space-between center"
       md-button.md-warn ng-click="destroy()" flex="50"
         | {{'DESTROY'|translate}}

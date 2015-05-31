@@ -9,5 +9,6 @@ angular.module("app").config ($translateProvider) ->
     CANCEL: "Annuler"
     UPDATE: "Modifier"
     DESTROY: "Supprimer"
+    RECURRING: "Tout les mois"
 
   $translateProvider.preferredLanguage('fr')

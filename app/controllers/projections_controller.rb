@@ -7,7 +7,7 @@ class ProjectionsController < ApplicationController
   behaviors :inherited, :included, :paginated, :controlled_access
 
   def permitted_params
-    params.permit(projection: [ :id, :variation, :label, :reccuring ])
+    params.permit(projection: [ :id, :variation, :label, :recurring ])
   end
 
   belongs_to :user

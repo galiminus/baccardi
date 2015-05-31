@@ -79,6 +79,7 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
               $scope.projection.put().then ->
                 projection.label = $scope.projection.label
                 projection.variation = $scope.projection.variation
+                projection.recurring = $scope.projection.recurring
                 $mdDialog.hide()
 
         .finally ->
