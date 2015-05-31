@@ -29,6 +29,7 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
         $scope.projections = projections
         $scope.date = date
         $scope.days = days
+        $scope.divider = (days - date + 1)
 
         $scope.$watch "projections", (projections) ->
           return unless projections
