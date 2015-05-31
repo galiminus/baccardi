@@ -1,19 +1,16 @@
 md-dialog flex="80" flex-gt-md="50" aria-label="{{'ADD_PROJECTION'|translate}}"
-  md-subheader.md-sticky-no-effect
-    h2
-      | {{'ADD_PROJECTION'|translate}}
   md-content.sticky-container
-    .dialog-content
-      form name="projectionNew" layout="row" layout-wrap="true" layout-padding="true"
-        md-input-container flex-gt-md="80" flex="100"
-          label
-            | {{'LABEL_ADD'|translate}}
-          input required="true" name="label" ng-model="projection.label"
-        md-input-container flex-gt-md="20" flex="100"
-          label
-            | {{'VARIATION_ADD'|translate}}
-          input required="true" name="variation" ng-model="projection.variation" type="number"
+    form name="projectionNew"
+      .dialog-content layout="row" layout-wrap="true" layout-padding="true"
+          md-input-container flex-gt-md="80" flex="100"
+            label
+              | {{'LABEL_ADD'|translate}}
+            input ng-required="true" name="label" ng-model="projection.label"
+          md-input-container flex-gt-md="20" flex="100"
+            label
+              | {{'VARIATION_ADD'|translate}}
+            input ng-required="true" name="variation" ng-model="projection.variation" type="number"
 
-    .md-actions layout="row"
-      md-button.md-primary ng-click="create()"
-        | {{'CREATE'|translate}}
+      .md-actions layout="row"
+        md-button.md-primary ng-click="create()" ng-disabled="projectionNew.$invalid"
+          | {{'CREATE'|translate}}

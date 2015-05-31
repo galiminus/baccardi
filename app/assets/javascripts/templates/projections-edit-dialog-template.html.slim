@@ -1,21 +1,18 @@
 md-dialog flex="100" flex-gt-md="50" aria-label="{{'ADD_PROJECTION'|translate}}"
-  md-subheader.md-sticky-no-effect
-    h2
-      | {{'UPDATE_PROJECTION'|translate}}
   md-content.sticky-container
-    .dialog-content
-      form name="projectionNew" layout="row" layout-wrap="true" layout-padding="true"
+    form name="projectionEdit"
+      .dialog-content layout="row" layout-wrap="true" layout-padding="true"
         md-input-container flex-gt-md="80" flex="100"
           label
             | {{'LABEL_ADD'|translate}}
-          input required="true" name="label" ng-model="projection.label"
+          input ng-required="true" name="label" ng-model="projection.label"
         md-input-container flex-gt-md="20" flex="100"
           label
             | {{'VARIATION_ADD'|translate}}
-          input required="true" name="variation" ng-model="projection.variation" type="number"
+          input ng-required="true" name="variation" ng-model="projection.variation" type="number"
 
     .md-actions layout="row" layout-align="space-between center"
       md-button.md-warn ng-click="destroy()" flex="50"
         | {{'DESTROY'|translate}}
-      md-button.md-primary ng-click="create()" flex="50"
+      md-button.md-primary ng-click="create()" flex="50" ng-disabled="projectionEdit.$invalid"
         | {{'UPDATE'|translate}}
