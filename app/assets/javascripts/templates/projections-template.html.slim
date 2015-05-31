@@ -1,21 +1,14 @@
-md-content layout="row" layout-align="center" layout-wrap="true" layout-fill="true"
-  .md-whiteframe-z1 flex="100" flex-gt-md="50" layout-padding="true" layout="column"
-    md-subheader ng-show="total"
-      h1.total
-        | {{total / (days - date + 1)|number:0}} / JOUR
-      p
-        | Du {{date}} au {{days}}
-    md-subheader ng-hide="total"
-      h1
-        | No projections
+md-content layout="row" layout-align="center"
+  section.md-whiteframe-z1 flex="100" flex-gt-md="50"
+    h2.md-display-1.total
+      | {{total / (days - date + 1)|number:0}} / JOUR
     md-list
-      md-divider flex="100" ng-show="total"
       md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center"
+        md-divider
         p ui-sref="projections.edit({id:projection.id})"
           | {{projection.label}}
-        h2.md-list-item-text
+        h2.md-title
           | {{projection.variation}}
-        md-divider flex="100"
-md-button class="md-accent md-fab md-fab-bottom-right" ui-sref="projections.new"
+md-button class="md-primary md-fab md-fab-bottom-right add-projection" ui-sref="projections.new"
   | +
 

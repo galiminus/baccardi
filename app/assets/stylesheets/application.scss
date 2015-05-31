@@ -9,9 +9,11 @@ main {
     }
 }
 
-h1.total {
-    font-size: 3em;
-    margin: 0.4em;
+.total {
     text-align: center;
+}
+
+a.md-fab {
+    position: fixed !important;
 }
 
