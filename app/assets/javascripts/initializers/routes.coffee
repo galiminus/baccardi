@@ -65,6 +65,7 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
 
       onEnter: ($mdDialog, $state, Restangular, user, projection, projections) ->
         $mdDialog.show
+          clickOutsideToClose: true
           templateUrl: "projections-edit-dialog-template.html"
           controller: ($scope) ->
             $scope.projection = Restangular.copy(projection)
@@ -84,4 +85,5 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
           $state.go "projections"
 
 .run ($rootScope) ->
-  $rootScope.$on("$stateChangeError", console.log.bind(console));
+  $rootScope.$on "$stateChangeError", console.log.bind(console)
+  $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
