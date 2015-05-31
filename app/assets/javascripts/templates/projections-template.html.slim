@@ -10,7 +10,7 @@ md-content layout="row" layout-align="center"
             p ui-sref="projections.edit({id:projection.id})"
               | {{projection.label}}
             h2.md-title
-              | {{projection.variation / divider|number:0}}
+              | {{projection.variation / divider|number:2}}
 
       md-tab label="Mois"
         h2.md-display-1.total
@@ -21,6 +21,6 @@ md-content layout="row" layout-align="center"
             p ui-sref="projections.edit({id:projection.id})"
               | {{projection.label}}
             h2.md-title
-              | {{projection.variation|number:0}}
+              | {{projection.variation|number:2}}
 md-button class="md-primary md-fab md-fab-bottom-right add-projection" ui-sref="projections.new"
   | +
