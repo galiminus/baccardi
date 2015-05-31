@@ -38,10 +38,12 @@ end
 gem 'active_model_serializers'
 gem 'inherited_resources'
 gem 'pundit'
+gem 'zobi', github: 'phorque/zobi'
 gem 'slim'
 gem 'figaro'
 gem 'httpclient'
 gem 'jwt'
+gem 'kaminari'
 
 gem 'angular-rails-templates'
 
