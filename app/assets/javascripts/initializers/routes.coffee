@@ -15,12 +15,21 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
       url: "/projections"
       templateUrl: "projections-template.html"
       resolve:
+        now: ->
+          moment()
+        date: (now) ->
+          now.date()
+        days: (now) ->
+          now.daysInMonth()
         user: (Restangular) ->
           Restangular.one("users", sessionStorage.id)
         projections: (user, Restangular) ->
           user.all("projections").getList()
-      controller: ($scope, projections) ->
+      controller: ($scope, projections, date, days) ->
         $scope.projections = projections
+        $scope.date = date
+        $scope.days = days
+
         $scope.$watch "projections", (projections) ->
           return unless projections
 

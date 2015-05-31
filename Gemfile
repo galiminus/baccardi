@@ -58,4 +58,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
   gem 'rails-assets-angular-moment'
   gem 'rails-assets-ng-currency'
+  gem 'rails-assets-moment'
 end

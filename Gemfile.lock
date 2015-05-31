@@ -195,6 +195,7 @@ DEPENDENCIES
   rails-assets-angular-moment!
   rails-assets-angular-translate!
   rails-assets-angular-ui-router!
+  rails-assets-moment!
   rails-assets-ng-currency!
   rails-assets-restangular!
   rails-assets-satellizer!

@@ -11,11 +11,13 @@
 // about supported directives.
 //
 //= require underscore
+//= require moment
 //= require angular
 //= require angular-material
 //= require angular-translate
 //= require angular-animate
 //= require angular-aria
+//= require angular-moment
 //= require angular-ui-router
 //= require angular-rails-templates
 //= require ng-currency

@@ -6,4 +6,5 @@ angular.module("app", [
   "templates"
   "satellizer"
   "ng-currency"
+  "angularMoment"
 ])
