@@ -79,7 +79,6 @@ GEM
       activesupport (>= 3.0.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    material_icons (0.0.5)
     method_source (0.8.2)
     mime-types (2.5)
     minitest (5.6.1)
@@ -197,7 +196,6 @@ DEPENDENCIES
   inherited_resources
   jwt
   kaminari
-  material_icons
   ngannotate-rails
   pg
   pry

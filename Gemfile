@@ -46,7 +46,6 @@ gem 'jwt'
 gem 'kaminari'
 
 gem 'angular-rails-templates'
-gem 'material_icons'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-satellizer'
