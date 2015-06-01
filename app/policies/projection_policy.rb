@@ -14,7 +14,7 @@ class ProjectionPolicy < Struct.new(:user, :resource)
   end
 
   def create?
-    resource.user_id == user.id
+    true
   end
 
   def update?

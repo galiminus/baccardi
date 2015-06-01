@@ -12,5 +12,7 @@ angular.module("app").config ($translateProvider) ->
     RECURRING: "Tout les mois"
     EVERY_DAY: "par jour"
     EVERY_MONTH: "par mois"
+    DAY: "Jour"
+    MONTH: "Mois"
 
   $translateProvider.preferredLanguage('fr')

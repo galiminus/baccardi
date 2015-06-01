@@ -12,6 +12,7 @@
 //
 //= require underscore
 //= require moment
+//= require moment/locale/fr
 //= require angular
 //= require angular-material
 //= require angular-translate

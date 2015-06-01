@@ -1,9 +1,9 @@
 md-content layout="row" layout-align="center"
   section.md-whiteframe-z1 flex="100" flex-gt-md="50"
     md-tabs md-dynamic-height="true"
-      md-tab label="Jour"
+      md-tab label="{{'DAY'|translate}}"
         h2.md-display-1.total
-          | {{total / divider|number:0}}
+          | {{total / divider|number:0}} / {{'DAY'|translate}}
         md-list
           md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center" layout-wrap="true"
             md-divider
@@ -14,10 +14,10 @@ md-content layout="row" layout-align="center"
               span.recurrence ng-show="projection.recurring"
                 | {{'EVERY_DAY'|translate}}
               span.recurrence ng-hide="projection.recurring"
-                | {{projection.created_at}}
-      md-tab label="Mois"
+                | {{projection.created_at|amDateFormat:'dddd Do'}}
+      md-tab label="{{'MONTH'|translate}}"
         h2.md-display-1.total
-          | {{total|number:0}}
+          | {{total|number:0}} / {{'MONTH'|translate}}
         md-list
           md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center"
             md-divider
@@ -28,6 +28,6 @@ md-content layout="row" layout-align="center"
               span.recurrence ng-show="projection.recurring"
                 | {{'EVERY_MONTH'|translate}}
               span.recurrence ng-hide="projection.recurring"
-                | {{projection.created_at}}
+                | {{projection.created_at|amDateFormat:'dddd Do'}}
 md-button class="md-primary md-fab md-fab-bottom-right add-projection" ui-sref="projections.new"
   | +
