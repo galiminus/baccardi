@@ -11,7 +11,7 @@ md-content layout="row" layout-align="center"
             md-divider
             p ui-sref="projections.edit({id:projection.id})"
               | {{projection.label}}
-            h2.md-title
+            h2.md-title ui-sref="projections.edit({id:projection.id})"
               | {{projection.variation / divider|number:2}}
               span.recurrence ng-show="projection.recurring"
                 | {{'EVERY_DAY'|translate}}

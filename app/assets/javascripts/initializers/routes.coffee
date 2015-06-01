@@ -79,13 +79,22 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
           templateUrl: "projections-edit-dialog-template.html"
           controller: ($scope) ->
             $scope.projection = Restangular.copy(projection)
+            if $scope.projection.variation < 0
+              $scope.type = 'spending'
+              $scope.projection.variation *= -1
+            else
+              $scope.type = 'income'
+
             $scope.destroy = ->
               $scope.projection.remove().then ->
                 index = projections.indexOf projection
                 projections.splice index, 1
                 $mdDialog.hide()
 
-            $scope.create = ->
+            $scope.update = ->
+              if $scope.type == 'spending'
+                $scope.projection.variation *= -1
+
               $scope.projection.put().then ->
                 projection.label = $scope.projection.label
                 projection.variation = $scope.projection.variation
