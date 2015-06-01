@@ -7,8 +7,10 @@ md-dialog flex="80" flex-gt-md="30" aria-label="{{'ADD_PROJECTION'|translate}}"
               | {{'LABEL_ADD'|translate}}
             input ng-required="true" name="label" ng-model="projection.label"
           md-input-container flex-gt-md="40" flex="100"
-            label
-              | {{'VARIATION_ADD'|translate}}
+            label ng-if="type=='income'"
+              | {{'INCOME_ADD'|translate}}
+            label ng-if="type=='spending'"
+              | {{'SPENDING_ADD'|translate}}
             input ng-required="true" name="variation" ng-model="projection.variation" type="number"
 
           md-switch ng-model="projection.recurring" aria-label="recurring"

@@ -48,14 +48,18 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
         , true
 
     .state "projections.new",
-      url: "/new"
-      onEnter: ($mdDialog, $state, Restangular, user, projections) ->
+      url: "/new/:type"
+      onEnter: ($mdDialog, $state, $stateParams, Restangular, user, projections) ->
         $mdDialog.show
           clickOutsideToClose: true
           templateUrl: "projections-new-dialog-template.html"
           controller: ($scope) ->
             $scope.projection = {}
+            $scope.type = $stateParams.type
             $scope.create = ->
+              if $scope.type == 'spending'
+                $scope.projection.variation *= -1
+
               user.all("projections").post($scope.projection).then (projection) ->
                 projections.unshift projection
                 $mdDialog.hide()

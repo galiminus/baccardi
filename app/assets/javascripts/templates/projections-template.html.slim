@@ -44,26 +44,30 @@ nav [
 				mfb-button="true"
                 icon="spending"
 				template-url="ng-mfb-button-md.tpl.html"
-				label="{{'ADD_SPENDING'|translate}}"
-                ui-sref="projections.new" ]
+                label="{{'ADD_SPENDING'|translate}}"
+                mfb-button-close="true"
+                ui-sref="projections.new({type:'spending'})" ]
 
 	a [
 				mfb-button="true"
 				icon="income"
 				template-url="ng-mfb-button-md.tpl.html"
-				label="{{'ADD_INCOME'|translate}}"
-                ui-sref="projections.new" ]
+                label="{{'ADD_INCOME'|translate}}"
+                mfb-button-close="true"
+                ui-sref="projections.new({type:'income'})" ]
 
 	a [
 				mfb-button="true"
 				icon="settings"
 				template-url="ng-mfb-button-md.tpl.html"
-				label="{{'SETTINGS'|translate}}"
+                label="{{'SETTINGS'|translate}}"
+                mfb-button-close="true"
                 ui-sref="edges.all.delete" ]
 
 	a [
 				mfb-button="true"
 				icon="disconnect"
 				template-url="ng-mfb-button-md.tpl.html"
-				label="{{'DISCONNECT'|translate}}"
+                label="{{'DISCONNECT'|translate}}"
+                mfb-button-close="true"
 				ng-click="logout()" ]
