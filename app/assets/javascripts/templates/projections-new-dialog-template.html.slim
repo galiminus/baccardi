@@ -1,12 +1,12 @@
-md-dialog flex="80" flex-gt-md="50" aria-label="{{'ADD_PROJECTION'|translate}}"
+md-dialog flex="80" flex-gt-md="30" aria-label="{{'ADD_PROJECTION'|translate}}"
   md-content.sticky-container
     form name="projectionNew"
       .dialog-content layout="row" layout-wrap="true" layout-padding="true"
-          md-input-container flex-gt-md="80" flex="100"
+          md-input-container flex-gt-md="60" flex="100"
             label
               | {{'LABEL_ADD'|translate}}
             input ng-required="true" name="label" ng-model="projection.label"
-          md-input-container flex-gt-md="20" flex="100"
+          md-input-container flex-gt-md="40" flex="100"
             label
               | {{'VARIATION_ADD'|translate}}
             input ng-required="true" name="variation" ng-model="projection.variation" type="number"

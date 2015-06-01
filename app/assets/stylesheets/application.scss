@@ -21,3 +21,13 @@ a.md-fab {
     position: fixed !important;
 }
 
+h2.md-title {
+    text-align: right;
+    .recurrence {
+        display: block;
+        font-size: 0.7em;
+        color: #888;
+        line-height: 1.9em;
+        text-transform: lowercase;
+    }
+}

@@ -10,5 +10,7 @@ angular.module("app").config ($translateProvider) ->
     UPDATE: "Modifier"
     DESTROY: "Supprimer"
     RECURRING: "Tout les mois"
+    EVERY_DAY: "par jour"
+    EVERY_MONTH: "par mois"
 
   $translateProvider.preferredLanguage('fr')
