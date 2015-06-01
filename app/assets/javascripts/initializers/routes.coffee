@@ -60,9 +60,9 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
               if $scope.type == 'spending'
                 $scope.projection.variation *= -1
 
+              $mdDialog.hide()
               user.all("projections").post($scope.projection).then (projection) ->
                 projections.unshift projection
-                $mdDialog.hide()
 
         .finally ->
           $state.go "projections"
@@ -92,6 +92,8 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
                 $mdDialog.hide()
 
             $scope.update = ->
+              $mdDialog.hide()
+
               if $scope.type == 'spending'
                 $scope.projection.variation *= -1
 
@@ -99,7 +101,6 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
                 projection.label = $scope.projection.label
                 projection.variation = $scope.projection.variation
                 projection.recurring = $scope.projection.recurring
-                $mdDialog.hide()
 
         .finally ->
           $state.go "projections"
