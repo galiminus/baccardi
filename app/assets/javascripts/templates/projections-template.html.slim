@@ -4,6 +4,8 @@ md-content layout="row" layout-align="center"
       md-tab label="{{'DAY'|translate}}"
         h2.md-display-1.total
           | {{total / divider|number:0}} / {{'DAY'|translate}}
+          span.date-range
+            | Du {{now|amDateFormat:'Do'}} au {{days}} {{now|amDateFormat:'MMMM'}}
         md-list
           md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center" layout-wrap="true"
             md-divider

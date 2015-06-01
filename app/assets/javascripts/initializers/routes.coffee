@@ -25,8 +25,9 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
           Restangular.one("users", sessionStorage.id)
         projections: (user, Restangular) ->
           user.all("projections").getList()
-      controller: ($scope, projections, date, days) ->
+      controller: ($scope, projections, now, date, days) ->
         $scope.projections = projections
+        $scope.now = now
         $scope.date = date
         $scope.days = days
         $scope.divider = (days - date + 1)
