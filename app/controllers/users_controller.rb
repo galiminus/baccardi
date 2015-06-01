@@ -7,6 +7,4 @@ class UsersController < InheritedResources::Base
 
     render json: { id: @user.id, token: Token.encode(@user.id) }
   end
-
-  has_many :projections
 end
