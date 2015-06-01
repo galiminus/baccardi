@@ -15,5 +15,9 @@ angular.module("app").config ($translateProvider) ->
     EVERY_MONTH: "par mois"
     DAY: "Jour"
     MONTH: "Mois"
+    ADD_SPENDING: "Ajouter une dépense"
+    ADD_INCOME: "Ajouter un revenu"
+    SETTINGS: "Modifier les options"
+    DISCONNECT: "Se déconnecter"
 
   $translateProvider.preferredLanguage('fr')

@@ -8,7 +8,7 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
       controller: ($scope, $rootScope, $auth, $state) ->
         $scope.authenticate = ->
           $auth.authenticate('google').then (response) ->
-            sessionStorage.id = response.data.id
+            sessionStorage.setItem('id', response.data.id)
             $state.go "projections"
 
     .state "projections",
@@ -22,15 +22,19 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
         days: (now) ->
           now.daysInMonth()
         user: (Restangular) ->
-          Restangular.one("users", sessionStorage.id)
+          Restangular.one("users", sessionStorage.getItem("id"))
         projections: (user, Restangular) ->
           user.all("projections").getList()
-      controller: ($scope, projections, now, date, days) ->
+      controller: ($scope, $state, projections, now, date, days) ->
         $scope.projections = projections
         $scope.now = now
         $scope.date = date
         $scope.days = days
         $scope.divider = (days - date + 1)
+
+        $scope.logout = ->
+          sessionStorage.removeItem("id")
+          $state.go "login"
 
         $scope.$watch "projections", (projections) ->
           return unless projections
@@ -90,6 +94,6 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
 .run ($rootScope, $state, $auth) ->
   $rootScope.$on "$stateChangeError", console.log.bind(console)
   $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
-    if !sessionStorage.id and toState.name != "login"
+    if !sessionStorage.getItem("id") and toState.name != "login"
       event.preventDefault();
       $state.transitionTo 'login'

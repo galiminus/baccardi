@@ -7,4 +7,5 @@ angular.module("app", [
   "satellizer"
   "ng-currency"
   "angularMoment"
+  "ng-mfb"
 ])

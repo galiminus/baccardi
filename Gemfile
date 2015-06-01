@@ -46,7 +46,7 @@ gem 'jwt'
 gem 'kaminari'
 
 gem 'angular-rails-templates'
-
+gem 'material_icons'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-satellizer'
@@ -61,4 +61,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-moment'
   gem 'rails-assets-ng-currency'
   gem 'rails-assets-moment'
+  gem 'rails-assets-ng-mfb'
 end
