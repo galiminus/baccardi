@@ -1,5 +1,6 @@
 angular.module("app").config ($translateProvider) ->
   $translateProvider.translations 'fr',
+    SIGN_IN_WITH_GOOGLE: "Se connecter avec Google"
    	TITLE: "Baccardi"
     ADD_PROJECTION: "Nouvelle projection"
     UPDATE_PROJECTION: "Modifier la projection"

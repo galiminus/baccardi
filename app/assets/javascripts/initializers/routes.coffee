@@ -87,6 +87,9 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
         .finally ->
           $state.go "projections"
 
-.run ($rootScope) ->
+.run ($rootScope, $state, $auth) ->
   $rootScope.$on "$stateChangeError", console.log.bind(console)
   $rootScope.$on '$stateChangeStart', (event, toState, toParams, fromState, fromParams) ->
+    if !sessionStorage.id and toState.name != "login"
+      event.preventDefault();
+      $state.transitionTo 'login'
