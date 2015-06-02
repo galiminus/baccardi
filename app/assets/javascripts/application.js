@@ -11,18 +11,14 @@
 // about supported directives.
 //
 //= require underscore
-//= require moment
-//= require moment/locale/fr
 //= require angular
 //= require angular-material
 //= require angular-translate
 //= require angular-animate
 //= require angular-aria
-//= require angular-moment
 //= require angular-ui-router
 //= require angular-rails-templates
-//= require angular-currency-filter
-//= require angular-i18n/fr-fr
+//= require angular-i18n/angular-locale_fr-fr
 //= require satellizer
 //= require restangular
 //= require ng-mfb

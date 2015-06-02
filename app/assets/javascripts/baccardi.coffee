@@ -6,7 +6,5 @@ angular.module("app", [
   "restangular"
   "templates"
   "satellizer"
-  "angularMoment"
   "ng-mfb"
-  "currencyFilter"
 ])

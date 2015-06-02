@@ -16,21 +16,18 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
       templateUrl: "projections-template.html"
       resolve:
         now: ->
-          moment()
-        date: (now) ->
-          now.date()
-        days: (now) ->
-          now.daysInMonth()
+          new Date()
+        endOfMonth: (now) ->
+          new Date(now.getFullYear(), now.getMonth() + 1, 0)
         user: (Restangular) ->
           Restangular.one("users", sessionStorage.getItem("id"))
         projections: (user, Restangular) ->
           user.all("projections").getList()
-      controller: ($scope, $state, projections, now, date, days) ->
+      controller: ($scope, $state, projections, now, endOfMonth) ->
         $scope.projections = projections
         $scope.now = now
-        $scope.date = date
-        $scope.days = days
-        $scope.divider = (days - date + 1)
+        $scope.days = endOfMonth.getDate()
+        $scope.divider = ($scope.days - now.getDate() + 1)
 
         $scope.logout = ->
           sessionStorage.removeItem("id")
