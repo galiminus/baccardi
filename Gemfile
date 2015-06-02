@@ -58,7 +58,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-aria'
   gem 'rails-assets-underscore'
   gem 'rails-assets-angular-moment'
-  gem 'rails-assets-ng-currency'
+  gem 'rails-assets-angular-currency-filter'
   gem 'rails-assets-moment'
   gem 'rails-assets-ng-mfb'
+  gem 'rails-assets-angular-i18n'
 end

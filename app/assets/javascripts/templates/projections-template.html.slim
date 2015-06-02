@@ -1,37 +1,21 @@
 md-progress-linear md-mode="indeterminate" ng-show="loading"
-md-content layout="row" layout-align="center"
+md-content layout="row" layout-align="center"  layout-fill="true"
   section.md-whiteframe-z1 flex="100" flex-gt-md="50"
-    md-tabs md-dynamic-height="true"
-      md-tab label="{{'DAY'|translate}}"
-        h2.md-display-1.total
-          | {{total / divider|number:0}} / {{'DAY'|translate}}
-          span.date-range
-            | Du {{now|amDateFormat:'Do'}} au {{days}} {{now|amDateFormat:'MMMM'}}
-        md-list
-          md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center" layout-wrap="true"
-            md-divider
-            p ui-sref="projections.edit({id:projection.id})"
-              | {{projection.label}}
-            h2.md-title ui-sref="projections.edit({id:projection.id})"
-              | {{projection.variation / divider|number:2}}
-              span.recurrence ng-show="projection.recurring"
-                | {{'EVERY_DAY'|translate}}
-              span.recurrence ng-hide="projection.recurring"
-                | {{projection.created_at|amDateFormat:'dddd Do'}}
-      md-tab label="{{'MONTH'|translate}}"
-        h2.md-display-1.total
-          | {{total|number:0}} / {{'MONTH'|translate}}
-        md-list
-          md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center"
-            md-divider
-            p ui-sref="projections.edit({id:projection.id})"
-              | {{projection.label}}
-            h2.md-title
-              | {{projection.variation|number:2}}
-              span.recurrence ng-show="projection.recurring"
-                | {{'EVERY_MONTH'|translate}}
-              span.recurrence ng-hide="projection.recurring"
-                | {{projection.created_at|amDateFormat:'dddd Do'}}
+    h2.md-display-1.total
+      | {{total / divider|currency:'€':true}} / {{'DAY'|translate}}
+      span.date-range
+        | {{total|number:0}} du {{now|amDateFormat:'Do'}} au {{days}} {{now|amDateFormat:'MMMM'}}
+    md-list
+      md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center" layout-wrap="true"
+        md-divider
+        p ui-sref="projections.edit({id:projection.id})"
+          | {{projection.label}}
+        h2.md-title ui-sref="projections.edit({id:projection.id})"
+          | {{projection.variation / divider|currency:'€':true}}
+          span.recurrence ng-show="projection.recurring"
+            | {{projection.variation|currency:'€':true}} {{'EVERY_MONTH'|translate}}
+          span.recurrence ng-hide="projection.recurring"
+            | {{projection.variation|currency:'€':true}} le {{projection.created_at|amDateFormat:'dddd Do'}}
 
 nav [
 	mfb-menu="true"

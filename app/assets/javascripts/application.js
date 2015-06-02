@@ -21,7 +21,8 @@
 //= require angular-moment
 //= require angular-ui-router
 //= require angular-rails-templates
-//= require ng-currency
+//= require angular-currency-filter
+//= require angular-i18n/fr-fr
 //= require satellizer
 //= require restangular
 //= require ng-mfb
