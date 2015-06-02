@@ -26,6 +26,13 @@ a.md-fab {
 h2.md-title {
     text-align: right;
     .recurrence {
+        font-size: 0.7em;
+        color: #000;
+        line-height: 1.9em;
+        text-transform: lowercase;
+	padding-left: 0.5em;
+    }
+    .variation-full {
         display: block;
         font-size: 0.7em;
         color: #888;

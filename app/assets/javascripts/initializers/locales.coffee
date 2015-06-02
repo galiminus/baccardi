@@ -1,10 +1,9 @@
 angular.module("app").config ($translateProvider) ->
   $translateProvider.translations 'fr',
     SIGN_IN_WITH_GOOGLE: "Se connecter avec Google"
-   	TITLE: "Baccardi"
     ADD_PROJECTION: "Nouvelle projection"
     UPDATE_PROJECTION: "Modifier la projection"
-   	LABEL_ADD: "Détail"
+    LABEL_ADD: "Détail"
     SPENDING_ADD: "Dépense"
     INCOME_ADD: "Revenu"
     CREATE: "Ajouter"
@@ -14,8 +13,6 @@ angular.module("app").config ($translateProvider) ->
     RECURRING: "Tout les mois"
     EVERY_DAY: "par jour"
     EVERY_MONTH: "par mois"
-    DAY: "Jour"
-    MONTH: "Mois"
     ADD_SPENDING: "Ajouter une dépense"
     ADD_INCOME: "Ajouter un revenu"
     SETTINGS: "Modifier les options"

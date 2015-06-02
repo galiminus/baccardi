@@ -1,20 +1,23 @@
 md-progress-linear md-mode="indeterminate" ng-show="loading"
-md-content layout="row" layout-align="center"  layout-fill="true"
-  section.md-whiteframe-z1 flex="100" flex-gt-md="50"
-    h2.md-display-1.total
-      | {{total / divider|currency}} / {{'DAY'|translate}}
-      span.date-range
-        | {{total|currency}} du {{now|date:'dd'}} au {{days}} {{now|date:'MMMM'}}
-    md-list
+md-content style="height: 100%;"
+  section layout="row" layout-align="center" layout-wrap="true"
+    md-subheader.total flex="100"
+      .md-display-2
+        | {{total / divider|currency}} {{'EVERY_DAY'|translate}}
+        span.date-range
+          | {{total|currency}} du {{now|date:'dd'}} au {{days}} {{now|date:'MMMM'}}
+    md-list flex="100" flex-gt-md="50"
       md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center" layout-wrap="true"
         md-divider
         p ui-sref="projections.edit({id:projection.id})"
           | {{projection.label}}
         h2.md-title ui-sref="projections.edit({id:projection.id})"
           | {{projection.variation / divider|currency}}
-          span.recurrence ng-show="projection.recurring"
+          /span.recurrence
+            / | {{'EVERY_DAY'|translate}}
+          span.variation-full ng-show="projection.recurring"
             | {{projection.variation|currency}} {{'EVERY_MONTH'|translate}}
-          span.recurrence ng-hide="projection.recurring"
+          span.variation-full ng-hide="projection.recurring"
             | {{projection.variation|currency}} le {{projection.created_at|date}}
 
 nav [
