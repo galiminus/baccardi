@@ -1,12 +1,15 @@
-md-progress-linear md-mode="indeterminate" ng-show="loading"
+/md-progress-linear md-mode="indeterminate" ng-show="loading"
 md-content style="height: 100%;"
-  section layout="row" layout-align="center" layout-wrap="true"
-    md-subheader.total flex="100"
-      .md-display-2
-        | {{total / divider|currency}} {{'EVERY_DAY'|translate}}
-        span.date-range
+  section
+    md-subheader.md-primary
+      section.total layout="column" layout-gt-md="row" layout-align="space-between" flex="100"
+        .md-title
+          | {{total / divider|currency}} {{'EVERY_DAY'|translate}}
+        .md-title hide-sm="true"
           | {{total|currency}} du {{now|date:'dd'}} au {{days}} {{now|date:'MMMM'}}
-    md-list flex="100" flex-gt-md="50"
+        .md-caption hide-gt-sm="true"
+          | {{total|currency}} du {{now|date:'dd'}} au {{days}} {{now|date:'MMMM'}}
+    md-list
       md-list-item ng-repeat="projection in projections" layout="row" layout-align="space-between center" layout-wrap="true"
         md-divider
         p ui-sref="projections.edit({id:projection.id})"
