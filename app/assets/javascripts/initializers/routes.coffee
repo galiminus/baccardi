@@ -23,7 +23,9 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
           Restangular.one("users", sessionStorage.getItem("id"))
         projections: (user, Restangular) ->
           user.all("projections").getList()
-      controller: ($scope, $state, projections, now, endOfMonth) ->
+        currentProjections: (projections, now) ->
+          
+      controller: ($scope, $state, projections, currentProjections, now, endOfMonth) ->
         $scope.projections = projections
         $scope.now = now
         $scope.days = endOfMonth.getDate()
@@ -42,6 +44,14 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
             $scope.total = projections.map (projection) ->
               projection.variation
             .reduce (x, y) -> x + y
+
+            currentProjections = (projection for projection in projections when new Date(projection.created_at).getDate() == now.getDate())
+            if currentProjections.length == 0
+              $scope.currentTotal = 0
+            else
+              $scope.todayTotal = currentProjections.map (projection) ->
+                projection.variation
+              .reduce (x, y) -> x + y
         , true
 
     .state "projections.new",

@@ -16,8 +16,12 @@ md-list {
 
 .total {
     text-transform: uppercase;
-    .md-caption {
+    > .md-caption {
         padding-top: 1em;
+    }
+    .md-title .md-caption {
+        display: inline;
+        padding-left: 1em;
     }
 }
 

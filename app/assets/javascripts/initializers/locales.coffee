@@ -17,5 +17,6 @@ angular.module("app").config ($translateProvider) ->
     ADD_INCOME: "Ajouter un revenu"
     SETTINGS: "Modifier les options"
     DISCONNECT: "Se déconnecter"
+    REMAINING: "reste"
 
   $translateProvider.preferredLanguage('fr')

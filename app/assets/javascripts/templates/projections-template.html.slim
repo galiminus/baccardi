@@ -5,6 +5,8 @@ md-content style="height: 100%;"
       section.total layout="column"
         .md-title
           | {{total / divider|currency}} {{'EVERY_DAY'|translate}}
+          .md-caption
+            | {{'REMAINING'|translate}} {{total / divider - todayTotal|currency}}
         .md-caption
           | {{total|currency}} du {{now|date:'dd'}} au {{days}} {{now|date:'MMMM'}}
     md-list
