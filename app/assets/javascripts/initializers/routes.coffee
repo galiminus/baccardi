@@ -45,12 +45,14 @@ angular.module("app").config ($stateProvider, $urlRouterProvider) ->
               projection.variation
             .reduce (x, y) -> x + y
 
-            currentProjections = (projection for projection in projections when new Date(projection.created_at).getDate() == now.getDate())
+            currentProjections = (projection for projection in projections when \
+              (new Date(projection.created_at).getDate() == now.getDate() && !projection.recurring))
+
             if currentProjections.length == 0
               $scope.currentTotal = 0
             else
-              $scope.todayTotal = currentProjections.map (projection) ->
-                projection.variation
+              $scope.currentTotal = currentProjections.map (projection) ->
+                projection.variation * -1
               .reduce (x, y) -> x + y
         , true
 
