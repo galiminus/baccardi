@@ -23,6 +23,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "rack-cors"
+
 group :production do
   gem "ngannotate-rails"
   gem 'rails_12factor'
@@ -44,19 +46,3 @@ gem 'figaro'
 gem 'httpclient'
 gem 'jwt'
 gem 'kaminari'
-
-gem 'angular-rails-templates'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-satellizer'
-  gem 'rails-assets-angular', "~> 1.3.15"
-  gem 'rails-assets-angular-translate'
-  gem 'rails-assets-angular-ui-router'
-  gem 'rails-assets-restangular'
-  gem 'rails-assets-angular-material'
-  gem 'rails-assets-angular-animate'
-  gem 'rails-assets-angular-aria'
-  gem 'rails-assets-underscore'
-  gem 'rails-assets-ng-mfb'
-  gem 'rails-assets-angular-i18n'
-end
